@@ -7,7 +7,8 @@
     display: box;
     box-shadow: 0 0 0 1px;
     text-align: center;
-    background-color: $bright;
+    background-color: $bright;   
+    overflow: auto;
 }
 
 .card-large h2 {
@@ -53,6 +54,9 @@ margin: 0px;
 .card-small {
     width: 320px;
     height: 140px;
+    background-color: $dark;
+    border-radius: 4px;
+    margin-top: 10px;
 }
 
 /* .card-small .image this is the container for the image in the small card */
@@ -67,9 +71,26 @@ margin: 0px;
     position: absolute;
     left: 43.75%;
     right: 0;
-    top: 0;
     bottom: 0;
+    display: flex;
+    align-items: space-between;
+    color: $light-gray;
 }
+
+.card-small .price {
+    position:absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.card-small .description {
+    position: absolute;
+    bottom: 15px; 
+    width: 130px;
+    overflow:auto;
+}
+
+
 
 /*Have not done the positioning for text fields yet*/
 
