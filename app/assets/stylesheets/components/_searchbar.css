@@ -1,1 +1,10 @@
+.search {
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
 
+background: linear-gradient(180deg, $color-light-grey 0%, $color-yellow 100%);
+border-radius: 15px;
+}
