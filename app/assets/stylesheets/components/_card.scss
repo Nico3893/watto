@@ -1,0 +1,57 @@
+/*This is the section for the large cards*/
+/* card-large is the whole card, thus the container for the card*/ 
+.card-large {
+    width: 240px;
+    height: 620px;
+    border-radius: 4px;
+    display: block;
+    box-shadow: 0 0 0 1px;
+}
+/* .card-large .image is the image at the top of the card, we implement the image root in the html */
+.card-large .image {
+height:400px;
+overflow:hidden;
+background-size:cover;
+background-repeat: no-repeat;
+margin: 0px;
+}
+
+/* .card-large .content is the content of the card, the container for the texts at the bottom*/
+
+.card-large .content {
+    position: relative;
+    top: 66.67%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 0 0 4px 4px;
+}
+
+/* thinking about to also implement responsiveness of cards, for example on hovering*/
+
+/* This is the section for small cards */
+/* .card-small this is the container for small cards*/
+.card-small {
+    width: 320px;
+    height: 140px;
+}
+
+/* .card-small .image this is the container for the image in the small card */
+.card-small .image {
+   height: 140px;
+   width: 140px; 
+}
+/*.card-small .content this is where the content of small cards belong */
+.card-small .content {
+    height: 140px;
+    width: 180px;
+    position: absolute;
+    left: 43.75%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+/*Have not done the positioning for text fields yet*/
+
+
