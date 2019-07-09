@@ -1,0 +1,17 @@
+.button-dark {
+background-color:#313131;
+color: #F5F5F5;
+position: relative;
+width: 120px;
+height: 40px;
+padding: 10px 15px;
+border-radius: 8px;
+font-weight: bold;
+font-family:'poppins-bold', sans-serif
+}
+
+.botton-dark:hover {
+text-decoration: none;
+color: white;
+
+}
