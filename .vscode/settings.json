@@ -1,0 +1,10 @@
+{
+    "emmet.triggerExpansionOnTab": true,
+    "editor.wordWrap": "on",
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.includeLanguages": {
+        "html.erb": "html",
+        "razor": "html",
+        "erb": "html"
+        },
+}

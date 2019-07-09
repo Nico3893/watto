@@ -1,6 +1,6 @@
 .button-dark {
-background-color: $color-dark-grey;
-color: $color-white;
+background-color: gray;
+color: white;
 position: relative;
 width: 120px;
 height: 40px;
@@ -12,13 +12,13 @@ font-family:'poppins-bold', sans-serif;
 
 .button-dark:hover {
 text-decoration: none;
-color: $color-white;
+color: white;
 
 }
 
 .button-light {
-background-color: $color-light-grey;
-color: $color-black;
+background-color: gray;
+color: black;
 position: relative;
 width: 120px;
 height: 40px;
@@ -30,7 +30,7 @@ font-family:'poppins-bold', sans-serif;
 
 .botton-light:hover {
 text-decoration: none;
-color: $color-yellow;
+color: yellow;
 /*border: 1px solid $color-black;
 */
 }
