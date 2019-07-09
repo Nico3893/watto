@@ -4,12 +4,23 @@
     width: 240px;
     height: 620px;
     border-radius: 4px;
-    display: block;
+    display: box;
     box-shadow: 0 0 0 1px;
+    text-align: center;
+    background-color: $bright;
 }
+
+.card-large h2 {
+    color: $light-gray;
+}
+
+.card-large p {
+    color: $light-gray;
+}
+
 /* .card-large .image is the image at the top of the card, we implement the image root in the html */
 .card-large .image {
-height:400px;
+height:300px;
 overflow:hidden;
 background-size:cover;
 background-repeat: no-repeat;
@@ -18,14 +29,22 @@ margin: 0px;
 
 /* .card-large .content is the content of the card, the container for the texts at the bottom*/
 
+/* content placement*/
+
 .card-large .content {
-    position: relative;
-    top: 66.67%;
-    bottom: 0;
-    right: 0;
-    left: 0;
     border-radius: 0 0 4px 4px;
+    display: flex;
+    justify-content: space-between;
 }
+
+.content .item{
+    position:relative;
+    left: 1px;
+    top:1px;
+}
+
+
+
 
 /* thinking about to also implement responsiveness of cards, for example on hovering*/
 
