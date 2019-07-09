@@ -1,0 +1,28 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
+  <%= link_to "pages#Home", class: "navbar-brand" do %>
+    <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1388px-Star_Wars_Logo.svg.png" %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Home", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Items", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Bookings", "#", class: "nav-link" %>
+      </li>
+      <li class="ml-5">
+        <%= image_tag "http://sharpball.co/wp-content/uploads/2019/01/darth-vader-printable-mask-image-0-darth-vader-mask-coloring-sheet.jpg", class: "avatar-large" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
