@@ -1,4 +1,13 @@
 /* creates hairline border around an element, if to be coded responsive go smaller on hairline-borders */
-.hairline-border {
+.filter-item {
     box-shadow: 0 0 0 1px;
+    width: 120px;
+    height: 40px;
+    padding: 10px 15px;
+    color: $darkest;
+    background-color: darkgrey;
+    border-radius: 1px;
+    text-align: center;
+    font-weight: bolder;
+    opacity: 0.7;
 }
