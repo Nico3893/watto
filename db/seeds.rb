@@ -18,7 +18,7 @@ def create_user(user)
     json_home = open(url_home).read
     home = JSON.parse(json_home)['name']
     email = "#{name.gsub(/\s+/, '')}@#{home.gsub(/\s+/, '')}.com"
-    result = {name: name, gender: gender, species: species, homeworld: home, email: email, password: email}
+    result = {name: name, gender: gender, species: species, homeworld: home, email: email, password: "123456"}
     return result
 end
 
