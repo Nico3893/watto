@@ -5,7 +5,8 @@
             <%= link_to item_path(item) do %>
                 <div class="col">
                     <div class="card-large">
-                        <div class="image" style='background-image:url("https://images.unsplash.com/photo-1562647017-7d25504253a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80")'>
+                        <%#= cl_image_tag item.photo, class: 'image' %>
+                        <div class="image" style='background-image:url(<%=item.photo%>)'>
                         </div>
                         <div class="content">
                             <h3 class="item"><%=item.name%></h3>
