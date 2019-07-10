@@ -3,5 +3,6 @@ class UserController < ApplicationController
   end
 
   def create
+    raise
   end
 end
