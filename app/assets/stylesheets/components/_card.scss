@@ -1,11 +1,11 @@
 /*This is the section for the large cards*/
 /* card-large is the whole card, thus the container for the card*/ 
 .card-large {
-    width: 300px;
-    height: 620px;
+    width: 320px;
+    height: 540px;
     border-radius: 4px;
-    display: box;
-    box-shadow: 0 0 0 0.5px $darkest;
+    box-shadow: 0 0 0 0.7px $darkest;
+    border: 0.8px $darkest solid;
     text-align: center;
     justify-content: center;
     background-color: $light-gray;   
@@ -13,6 +13,14 @@
     margin-bottom: 10px;
     transition:0.3s;
 }
+
+
+.card-large .fas {
+    color: $yellow;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
 
 .card-large h3 {
     color: $darkest;
@@ -122,7 +130,7 @@ opacity: 1;
 
 .col:hover > :hover,
 .col:focus-within > :focus {
-    transform: scale(1.1);
+    transform: scale(1.05);
     opacity: 1;
 }
 
