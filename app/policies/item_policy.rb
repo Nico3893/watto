@@ -5,4 +5,7 @@ class ItemPolicy < ApplicationPolicy
     end
 
   end
+  def show?
+    return true
+  end
 end
