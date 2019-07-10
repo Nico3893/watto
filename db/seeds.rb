@@ -24,7 +24,11 @@ STARSHIP_IMAGES = [
 
 VEHICLE_IMAGES = [
   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562766632/watto/vehicles/51H5E5K3AJL._SX466__uihcmx.jpg',
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562766520/watto/vehicles/vehicle_speeder_bike_hzipnt.jpg'
+  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562766520/watto/vehicles/vehicle_speeder_bike_hzipnt.jpg',
+  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562771942/watto/vehicles/vehicle_landspeeder_tbqp9b.jpg',
+  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562771942/watto/vehicles/vehicle_barge_df80s2.jpg',
+  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562771943/watto/vehicles/vehicle_pod_racer_ayc3dz.jpg',
+  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562772773/watto/vehicles/vehicle_wheel_bike_zfbhbv.jpg'
 ]
 
 def create_user(user)
