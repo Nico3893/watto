@@ -18,6 +18,11 @@
     color: $darkest;
 }
 
+.card-large a {
+    text-decoration: none;
+}
+
+
 .card-large p {
     color: $darkest;
     margin-top: 20px;
@@ -119,4 +124,11 @@ opacity: 1;
 .col:focus-within > :focus {
     transform: scale(1.1);
     opacity: 1;
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;  
+    }
 }
