@@ -1,22 +1,38 @@
 /*This is the section for the large cards*/
 /* card-large is the whole card, thus the container for the card*/ 
 .card-large {
-    width: 240px;
+    width: 300px;
     height: 620px;
     border-radius: 4px;
     display: box;
-    box-shadow: 0 0 0 1px;
+    box-shadow: 0 0 0 0.3px;
     text-align: center;
-    background-color: $bright;   
-    overflow: auto;
+    justify-content: center;
+    background-color: $light-gray;   
+    margin-top: 40px;
+    margin-bottom: 10px;
+    transition:0.3s;
 }
 
-.card-large h2 {
-    color: $light-gray;
+.card-large h3 {
+    color: $darkest;
 }
+
+.card-large a {
+    text-decoration: none;
+}
+
 
 .card-large p {
-    color: $light-gray;
+    color: $darkest;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.card-large .price {
+    position: absolute;
+    bottom: 5px;
 }
 
 /* .card-large .image is the image at the top of the card, we implement the image root in the html */
@@ -26,6 +42,7 @@ overflow:hidden;
 background-size:cover;
 background-repeat: no-repeat;
 margin: 0px;
+object-fit: cover;
 }
 
 /* .card-large .content is the content of the card, the container for the texts at the bottom*/
@@ -35,7 +52,10 @@ margin: 0px;
 .card-large .content {
     border-radius: 0 0 4px 4px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    text-align: center;
+    padding: 3px;
+    margin: 3px;
 }
 
 .content .item{
@@ -95,3 +115,20 @@ margin: 0px;
 /*Have not done the positioning for text fields yet*/
 
 
+.col:hover > *,
+.col:focus-within > * {
+opacity: 1;
+}
+
+.col:hover > :hover,
+.col:focus-within > :focus {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;  
+    }
+}
