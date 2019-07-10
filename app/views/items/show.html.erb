@@ -38,25 +38,11 @@
       </div>
     </div>
     <div class="form-booking col-4 pt-3">
-      <form action="/">
-        <div class="form-row">
-          <div class="col-6 form-group">
-            <label>Start date</label>
-            <input type="date" class="form-control" placeholder="today">
-          </div>
-          <div class="col-6 form-group">
-            <label>End date</label>
-            <input type="date" class="form-control" placeholder="">
-          </div>
-        </div>
-        <div class="form-row justify-content-center">
-          <div class="form-group">
-            <input type="Submit" class="button-dark" value="Book">
-          </div>
-        </div>
-
-        <!-- rest of the form below -->
-      </form>
+      <%= simple_form_for :booking, method: :post do |t| %>
+        <%= t.input :start_date, as: :string, input_html: {class: "datepicker"} %>
+        <%= t.input :end_date, as: :string, input_html: {class: "datepicker"} %>
+        <%= t.submit "Book", class: "button-dark" %>
+      <% end %>
     </div>
   </div>
 </div>
