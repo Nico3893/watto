@@ -8,7 +8,7 @@
   width: 120px;
   height: 40px;
   padding: 10px 15px;
-  margin: 4px 16px;
+  margin: 8px 16px;
   border: 1px solid $yellow;
   background-color: $darkest;
   border-radius: 5px;
@@ -16,6 +16,19 @@
   display: flex;
   text-align:center;
   justify-content: center;
+}
+
+.nav-item-search {
+  padding: 10px 15px;
+  margin: 4px 16px;
+  margin-right: 100px;
+  display: flex;
+  text-align:center;
+  justify-content: center;
+}
+
+.navbar-search {
+  width:400px;
 }
 
 .nav-link {
@@ -30,6 +43,6 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 70px;
+  width: 90px;
   border-radius: 5px;
 }

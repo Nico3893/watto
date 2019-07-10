@@ -1,5 +1,4 @@
 .search {
-  position: relative;
   left: 0%;
   right: 0%;
   top: 0%;
@@ -11,4 +10,8 @@
 
 .search:focus {
   outline:0;
+}
+
+.navbar-search {
+  position: relative;
 }
