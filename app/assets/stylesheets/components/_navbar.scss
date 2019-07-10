@@ -22,9 +22,6 @@
   padding: 10px 15px;
   margin: 4px 16px;
   margin-right: 100px;
-  display: flex;
-  text-align:center;
-  justify-content: center;
 }
 
 .navbar-search {
@@ -43,7 +40,13 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 90px;
+#navbar-brand img {
+  height: 70px;
   border-radius: 5px;
+}
+
+#navbar-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
 }
