@@ -1,8 +1,11 @@
 .banner-show {
-  background-size: cover;
+  object-fit: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   padding: 200px 0;
   height: 400px;
+  border-radius: 3px;
 }
 
 .banner-show h1 {
