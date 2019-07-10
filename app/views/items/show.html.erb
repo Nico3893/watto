@@ -1,6 +1,6 @@
 <div class="container">
-    <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallpaperplay.com/walls/full/9/d/b/124129.jpg);">
-    </div>
+      <div class="banner-show" style='background-image:url(<%=@item.photo%>)'>
+      </div>
   <div class="row align-items-center">
     <div class="detail-container col-4">
       <h2>
@@ -12,10 +12,13 @@
             <%= detail %>
           </p>
         <% end %>
+      <%if @item.location.nil?%>
+      <%else%>
       <h3>Location</h3>
       <p>
         <%= @item.location %>
       </p>
+      <%end%>
       <h3>Category</h3>
       <p>
         <%= @item.category %>
