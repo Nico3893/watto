@@ -22,7 +22,10 @@ STARSHIP_IMAGES = [
   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762427/watto/spaceship_dark_gray_nice_zksty0.png'
 ]
 
-VEHICLE_IMAGES = []
+VEHICLE_IMAGES = [
+  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562766632/watto/vehicles/51H5E5K3AJL._SX466__uihcmx.jpg',
+  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562766520/watto/vehicles/vehicle_speeder_bike_hzipnt.jpg'
+]
 
 def create_user(user)
     name = user['name']
@@ -83,7 +86,7 @@ def vehicles
   vehicles = JSON.parse(json)['results']
   vehicles.each do |item|
     vehicle = Item.new(create_vehicle(item))
-    #vehicle.remote_photo_url = VEHICLE_IMAGES.sample
+    vehicle.remote_photo_url = VEHICLE_IMAGES.sample
     vehicle.user = User.first
     vehicle.save
   end
