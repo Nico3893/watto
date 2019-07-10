@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
-  <%= link_to "root", class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "https://www.stickpng.com/assets/images/580b57fbd9996e24bc43bdb9.png" %>
   <% end %>
 
@@ -9,10 +9,10 @@
         <input type="search" class="search navbar-search" placeholder="Search your item">
       </li>
       <li class="nav-item">
-        <%= link_to "Home", "#", class: "nav-link" %>
+        <%= link_to "Create", new_item_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Items", "#", class: "nav-link" %>
+        <%= link_to "Items", items_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
         <%= link_to "Bookings", "#", class: "nav-link" %>

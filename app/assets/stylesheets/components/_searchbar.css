@@ -3,7 +3,7 @@
   right: 0%;
   top: 0%;
   bottom: 0%;
-
+  border-width: 0.3px;
   background: linear-gradient(180deg, $light-gray 0%, $yellow 100%);
   border-radius: 15px;
 }
