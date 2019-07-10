@@ -1,2 +1,59 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<div class="container">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallpaperplay.com/walls/full/9/d/b/124129.jpg);">
+    </div>
+  <div class="row align-items-center">
+    <div class="detail-container col-4">
+      <h2>
+        <%= @item.name %>
+      </h2>
+        <% details =  @item.details.split(",") %>
+        <% details.each do |detail| %>
+          <p>
+            <%= detail %>
+          </p>
+        <% end %>
+      <h3>Location</h3>
+      <p>
+        <%= @item.location %>
+      </p>
+      <h3>Category</h3>
+      <p>
+        <%= @item.category %>
+      </p>
+    </div>
+    <div class="col-3">
+      <div class="row">
+        <div class="col-12 avatar-large align-self-center">
+        <%= image_tag "http://sharpball.co/wp-content/uploads/2019/01/darth-vader-printable-mask-image-0-darth-vader-mask-coloring-sheet.jpg", alt: "alttext", class: "avatar-large"%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 align-self-center">
+          <h2>Price</h2>
+          <p><%= "#{@item.price} credits/ day" %></p>
+        </div>
+      </div>
+    </div>
+    <div class="form-booking col-4 pt-3">
+      <form>
+        <div class="form-row">
+          <div class="col-6 form-group">
+            <label>Start date</label>
+            <input type="date" class="form-control" placeholder="today">
+          </div>
+          <div class="col-6 form-group">
+            <label>End date</label>
+            <input type="date" class="form-control" placeholder="">
+          </div>
+        </div>
+        <div class="form-row justify-content-center">
+          <div class="form-group">
+            <input type="Submit" class="button-dark" value="Book">
+          </div>
+        </div>
+
+        <!-- rest of the form below -->
+      </form>
+    </div>
+  </div>
+</div>
