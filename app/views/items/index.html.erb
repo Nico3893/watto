@@ -1,3 +1,7 @@
+<% content_for(:title) do %>
+  Gatto's Garage
+<% end %>
+
 <div class="container">
     <div class="row">
         <% @items.each do |item|%>
@@ -15,14 +19,14 @@
                             </div>
                         <div class="content">
                             <h3 class="item"><%=item.name%></h3>
-                        </div> 
+                        </div>
                         <p><%=item.details.capitalize%></p>
                         <div class="content">
                         <h3 class="price"><%=item.price%> C</h3>
                         </div>
                     </div>
                 </div>
-            <%end%>            
+            <%end%>
         <%end%>
     </div>
 </div>
