@@ -1,20 +1,23 @@
 <div class="container">
     <div class="row">
-
         <% @items.each do |item|%>
             <%= link_to item_path(item) do %>
                 <div class="col">
                     <div class="card-large">
                         <%#= cl_image_tag item.photo, class: 'image' %>
-                        <div class="image" style='background-image:url(<%=item.photo%>)'>
-                        </div>
+                            <div class="image" style='background-image:url(<%=item.photo%>)'>
+                                <%if item.category == "starship"%>
+                                    <i class="fas fa-rocket"></i>
+                                <%elsif item.category == "vehicle"%>
+                                    <i class="fas fa-car"></i>
+                                <%else%>
+                                <%end%>
+                            </div>
                         <div class="content">
                             <h3 class="item"><%=item.name%></h3>
-                        </div>
-                        <p>Category: <%=item.category.capitalize%></p> 
+                        </div> 
                         <p><%=item.details.capitalize%></p>
                         <div class="content">
-                       
                         <h3 class="price"><%=item.price%> C</h3>
                         </div>
                     </div>
