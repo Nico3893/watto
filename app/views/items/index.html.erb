@@ -29,7 +29,11 @@
                                  <p><%=item.details%></p>
                             <% end%>
                                <div class="content">
+                               <%if item.price == 0 %>
+                                <h3>10 C</h3>
+                                <% else %>
                         <h3 class="price"><%=item.price%> C</h3>
+                        <%end%>
                         </div>
                     </div>
                 </div>
