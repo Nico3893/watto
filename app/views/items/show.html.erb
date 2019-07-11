@@ -35,7 +35,11 @@
         <%= image_tag "http://sharpball.co/wp-content/uploads/2019/01/darth-vader-printable-mask-image-0-darth-vader-mask-coloring-sheet.jpg", alt: "alttext", class: "avatar-large"%>
       </div>
         <div class="align-self-end">
-          <p style="position:relative;bottom:-180px"><%= "#{@item.price} C/DAY" %></p>
+          <%if @item.price == 0%>
+            <h3 style="position:relative;bottom:-180px"><%= "10 C/DAY" %></h3>
+          <%else%>
+            <h3 style="position:relative;bottom:-180px"><%= "#{@item.price} C/DAY" %></h3>
+          <%end%>
         </div>
       </div>    
     <div class="form-booking col-4 pt-3 mt-2">
