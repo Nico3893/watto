@@ -8,10 +8,10 @@
   width: 120px;
   height: 40px;
   padding: 10px 15px;
-  margin: 8px 16px;
+  margin: 4px;
   border: 1px solid $yellow;
   background-color: $darkest;
-  border-radius: 5px;
+  border-radius: 2px;
   opacity: 0.7;
   display: flex;
   text-align:center;
@@ -49,4 +49,35 @@
   display: flex;
   justify-content: space-between;
   flex-grow: 1;
+}
+
+a .nav-item {
+  border: none;
+  outline: none;
+  padding: 12px 40px 10px;
+  position: relative;
+}
+a .nav-item:before,
+a .nav-item:after {
+  border: 0 solid transparent;
+  transition: all 0.25s;
+  content: '';
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+a .nav-item:before {
+  border-top: 1px solid $yellow;
+  left: 0px;
+  top: -5px;
+}
+a .nav-item:after {
+  border-bottom: 1px solid $yellow;
+  bottom: -5px;
+  right: 0px;
+}
+a .nav-item:hover:before,
+a .nav-item:hover:after {
+  height: 100%;
+  width: 100%;
 }

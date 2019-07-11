@@ -8,29 +8,6 @@
 require 'open-uri'
 require 'json'
 
-STARSHIP_IMAGES = [
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762453/watto/spaceship_tiefighter_kghffg.png',
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762452/watto/spaceship_interior_blue_forv4u.jpg',
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762453/watto/spaceship_grey_wing_oknzkt.jpg',
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762452/watto/spaceship_orange_white_lkk0jn.jpg',
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762430/watto/stardestroyer_white_background_uiu39z.png',
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762429/watto/spaceship_white_night_blc5cx.jpg',
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762429/watto/spaceship_white_sqvkmh.jpg',
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762428/watto/spaceship_interior_old_grey_f9jqws.jpg',
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762428/watto/spaceship_destert_y91e0r.png',
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762428/watto/spaceship_droid_controll_station_jauxnw.png',
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762427/watto/spaceship_dark_gray_nice_zksty0.png'
-]
-
-VEHICLE_IMAGES = [
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562766632/watto/vehicles/51H5E5K3AJL._SX466__uihcmx.jpg',
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562766520/watto/vehicles/vehicle_speeder_bike_hzipnt.jpg',
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562771942/watto/vehicles/vehicle_landspeeder_tbqp9b.jpg',
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562771942/watto/vehicles/vehicle_barge_df80s2.jpg',
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562771943/watto/vehicles/vehicle_pod_racer_ayc3dz.jpg',
-  'https://res.cloudinary.com/djn5khfwt/image/upload/v1562772773/watto/vehicles/vehicle_wheel_bike_zfbhbv.jpg'
-]
-
 def create_user(user)
     name = user['name']
     gender = user['gender']
@@ -78,7 +55,6 @@ def starships
   starships = JSON.parse(json)['results']
   starships.each do |item|
     starship = Item.new(create_starship(item))
-    starship.remote_photo_url = STARSHIP_IMAGES.sample
     starship.user = User.first
     starship.save
   end
@@ -90,7 +66,6 @@ def vehicles
   vehicles = JSON.parse(json)['results']
   vehicles.each do |item|
     vehicle = Item.new(create_vehicle(item))
-    vehicle.remote_photo_url = VEHICLE_IMAGES.sample
     vehicle.user = User.first
     vehicle.save
   end
@@ -110,3 +85,104 @@ User.destroy_all
 users
 vehicles
 starships
+
+User.all.each do |user|
+  case user.name
+  when 'Luke Skywalker'
+    user.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562775780/watto/users/users_luke_skywalker_cf0f7q.jpg'
+    user.save
+  when 'C-3PO'
+    user.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562775801/watto/users/user_c3po_mm5std.jpg'
+    user.save
+  when 'R2-D2'
+    user.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562775791/watto/users/users_r2d2_rvjvco.png'
+    user.save
+  when 'Darth Vader'
+    user.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562776021/watto/users/user_darth_vader_e4agc1.jpg'
+    user.save
+  when 'Leia Organa'
+    user.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562776297/watto/users/user_leia_organa_i9mxgu.jpg'
+    user.save
+  when 'Owen Lars'
+    user.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562777783/watto/users/user_owen_lars_xeouua.jpg'
+    user.save
+  when 'Beru Whitesun lars'
+    user.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562778233/watto/users/beru-lars-6_d0zr9o.jpg'
+    user.save
+  when 'R5-D4'
+    user.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562778368/watto/users/user_r5-d4_hxqi03.jpg'
+    user.save
+  when 'Biggs Darklighter'
+    user.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562778469/watto/users/user_Biggs_Darklighter_u3hscc.jpg'
+    user.save
+  when 'Obi-Wan Kenobi'
+    user.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562833464/watto/users/user_obi_wan_kenobi_ksdy9o.png'
+    user.save
+  end
+end
+
+Item.all.each do |item|
+  case item.name
+  when 'TIE/LN starfighter'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562847476/watto/starships_tie_fighter_zhndsd.jpg'
+    item.save
+  when 'Snowspeeder'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562848781/watto/vehicles/vehicles_snow_speeder_fidiox.png'
+    item.save
+  when 'TIE bomber'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562847476/watto/starships_tie_fighter_zhndsd.jpg'
+    item.save
+  when 'AT-AT'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562848952/watto/vehicles/vehicles_at_at_ovjxcf.jpg'
+    item.save
+  when 'AT-ST'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562849012/watto/vehicles/vehicles_at_st_htes9l.png'
+    item.save
+  when 'Sand Crawler'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562848538/watto/vehicles/starships_sand_crawler_sdomm6.jpg'
+    item.save
+  when 'T-16 skyhopper'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562848350/watto/starships_naboo_royal_starship_utyxjs.jpg'
+    item.save
+  when 'X-34 landspeeder'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562771942/watto/vehicles/vehicle_landspeeder_tbqp9b.jpg'
+    item.save
+  when 'Storm IV Twin-Pod cloud car'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562857893/watto/vehicles/vehicles_storm_twin_pod_cloud_car_utpmfp.jpg'
+    item.save
+  when 'Sail barge'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562771942/watto/vehicles/vehicle_barge_df80s2.jpg'
+    item.save
+  when 'Executor'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562858038/watto/Executor_BF2_uz9hpc.png'
+    item.save
+  when 'Sentinel-class landing craft'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562847697/watto/star_ship_rebel_transport_ivqfew.jpg'
+    item.save
+  when 'Death Star'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562846741/watto/starships_death_star_yeevil.jpg'
+    item.save
+  when 'Millennium Falcon'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562846872/watto/starships_millenium_falcon_gbox6b.jpg'
+    item.save
+  when 'Y-wing'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562847030/watto/starships_y_wing_fp0fca.jpg'
+    item.save
+  when 'X-wing'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562847110/watto/starships_x_wing_cbd41t.jpg'
+    item.save
+  when 'TIE Advanced x1'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562847476/watto/starships_tie_fighter_zhndsd.jpg'
+    item.save
+  when 'Slave 1'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562858854/watto/Slave_I_DICE_viydms.png'
+    item.save
+  when 'Imperial shuttle'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562847874/watto/starships_imperial_shuttle_z3vfnf.jpg'
+    item.save
+  when 'EF76 Nebulon-B escort frigate'
+    item.remote_photo_url = 'https://res.cloudinary.com/djn5khfwt/image/upload/v1562858993/watto/AotR_Nebulon-B__1_vmmum8.png'
+    item.save
+  end
+end
+
