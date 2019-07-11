@@ -20,10 +20,14 @@
                         <div class="content">
                             <h3 class="item"><%=item.name%></h3>
                         </div> 
-                        <% details =  item.details.split(",") %>
-                             <p class="details"><%= details[0].upcase %> 
-                            <%= details[1].upcase %></p>
-                            <p class="details"><%= details[2].upcase + details[3].upcase%></p>
+                            <% details =  item.details.split(",") %>
+                            <%if details.count == 4 %>
+                                <p class="details"><%= details[0].upcase %> 
+                                <%= details[1].upcase %></p>
+                                <p class="details"><%= details[2].upcase + details[3].upcase%></p>
+                            <% else %>
+                                 <p><%=item.details%></p>
+                            <% end%>
                                <div class="content">
                         <h3 class="price"><%=item.price%> C</h3>
                         </div>
