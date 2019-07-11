@@ -16,8 +16,11 @@
                         <div class="content">
                             <h3 class="item"><%=item.name%></h3>
                         </div> 
-                        <p><%=item.details.capitalize%></p>
-                        <div class="content">
+                        <% details =  item.details.split(",") %>
+                             <p class="details"><%= details[0].capitalize %> 
+                            <%= details[1].capitalize %></p>
+                            <p class="details"><%= details[2].capitalize + details[3].capitalize%></p>
+                               <div class="content">
                         <h3 class="price"><%=item.price%> C</h3>
                         </div>
                     </div>
