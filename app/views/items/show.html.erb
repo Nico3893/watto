@@ -1,3 +1,8 @@
+<% content_for(:title) do %>
+  Book <%= @item.name %>
+<% end %>
+
+
 <div class="container">
 
       <div class="banner-show" style='background-image:url(<%=@item.photo%>)'>
@@ -42,7 +47,7 @@
       <%= simple_form_for :booking, method: :post do |t| %>
         <%= t.input :start_date, as: :string, input_html: {class: "datepicker"} %>
         <%= t.input :end_date, as: :string, input_html: {class: "datepicker"} %>
-        <%= t.submit "Book", class: "button-dark" %>
+        <%= t.submit "Book", class: "button-dark"%>
       <% end %>
     </div>
   </div>
