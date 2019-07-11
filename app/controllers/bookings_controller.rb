@@ -14,10 +14,11 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.item_id = params[:id]
     authorize @booking
     @booking.user = current_user
     if @booking.save
-      redirect_to bookings_path
+      redirect_to root_path
     else
       render :new
     end
