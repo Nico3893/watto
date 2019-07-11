@@ -13,19 +13,27 @@
                                 <%if item.category == "starship"%>
                                     <i class="fas fa-rocket"></i>
                                 <%elsif item.category == "vehicle"%>
-                                    <i class="fas fa-car"></i>
+                                    <i class="fas fa-fighter-jet"></i>
                                 <%else%>
                                 <%end%>
                             </div>
                         <div class="content">
                             <h3 class="item"><%=item.name%></h3>
                         </div> 
-                        <% details =  item.details.split(",") %>
-                             <p class="details"><%= details[0].upcase %> 
-                            <%= details[1].upcase %></p>
-                            <p class="details"><%= details[2].upcase + details[3].upcase%></p>
+                            <% details =  item.details.split(",") %>
+                            <%if details.count == 4 %>
+                                <p class="details"><%= details[0].upcase %> 
+                                <%= details[1].upcase %></p>
+                                <p class="details"><%= details[2].upcase + details[3].upcase%></p>
+                            <% else %>
+                                 <p><%=item.details%></p>
+                            <% end%>
                                <div class="content">
+                               <%if item.price == 0 %>
+                                <h3>10 C</h3>
+                                <% else %>
                         <h3 class="price"><%=item.price%> C</h3>
+                        <%end%>
                         </div>
                     </div>
                 </div>

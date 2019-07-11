@@ -6,13 +6,13 @@ class Item < ApplicationRecord
 
   validates :price, presence: true
   validates :name, presence: true
-  validates :category, presence: true
+  validates :category, inclusion: { in: ['starship', 'vehicle'] }
 
   include PgSearch
   pg_search_scope :search_global,
     against: [ :details, :name, :category ],
+    # using: :trigram
     using: {
-      tsearch: { prefix: true }
+      tsearch: { prefix: true },
     }
-
 end
