@@ -8,29 +8,6 @@
 require 'open-uri'
 require 'json'
 
-# STARSHIP_IMAGES = [
-#   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762453/watto/spaceship_tiefighter_kghffg.png',
-#   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762452/watto/spaceship_interior_blue_forv4u.jpg',
-#   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762453/watto/spaceship_grey_wing_oknzkt.jpg',
-#   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762452/watto/spaceship_orange_white_lkk0jn.jpg',
-#   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762430/watto/stardestroyer_white_background_uiu39z.png',
-#   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762429/watto/spaceship_white_night_blc5cx.jpg',
-#   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762429/watto/spaceship_white_sqvkmh.jpg',
-#   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762428/watto/spaceship_interior_old_grey_f9jqws.jpg',
-#   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762428/watto/spaceship_destert_y91e0r.png',
-#   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762428/watto/spaceship_droid_controll_station_jauxnw.png',
-#   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562762427/watto/spaceship_dark_gray_nice_zksty0.png'
-# ]
-
-# VEHICLE_IMAGES = [
-#   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562766632/watto/vehicles/51H5E5K3AJL._SX466__uihcmx.jpg',
-#   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562766520/watto/vehicles/vehicle_speeder_bike_hzipnt.jpg',
-#   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562771942/watto/vehicles/vehicle_landspeeder_tbqp9b.jpg',
-#   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562771942/watto/vehicles/vehicle_barge_df80s2.jpg',
-#   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562771943/watto/vehicles/vehicle_pod_racer_ayc3dz.jpg',
-#   'https://res.cloudinary.com/djn5khfwt/image/upload/v1562772773/watto/vehicles/vehicle_wheel_bike_zfbhbv.jpg'
-# ]
-
 def create_user(user)
     name = user['name']
     gender = user['gender']
@@ -78,7 +55,6 @@ def starships
   starships = JSON.parse(json)['results']
   starships.each do |item|
     starship = Item.new(create_starship(item))
-    # starship.remote_photo_url = STARSHIP_IMAGES.sample
     starship.user = User.first
     starship.save
   end
@@ -90,7 +66,6 @@ def vehicles
   vehicles = JSON.parse(json)['results']
   vehicles.each do |item|
     vehicle = Item.new(create_vehicle(item))
-    # vehicle.remote_photo_url = VEHICLE_IMAGES.sample
     vehicle.user = User.first
     vehicle.save
   end
