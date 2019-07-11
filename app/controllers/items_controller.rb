@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
     authorize @item
   end
 
