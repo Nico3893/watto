@@ -1,0 +1,23 @@
+.item-container {
+  margin-top:10px;
+  border: 3px solid black;
+  border-radius: 5px;
+  height: 80vh;
+  overflow: auto;
+}
+
+.bookings-container {
+  margin-top:10px;
+  border: 3px solid black;
+  border-radius: 5px;
+  height: 80vh;
+}
+
+.my-offers {
+  background-color: $gray;
+  height: 70vh;
+}
+.my-rents {
+  background-color: $gray;
+  height: 70vh;
+}
