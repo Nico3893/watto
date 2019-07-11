@@ -1,12 +1,12 @@
 /*This is the section for the large cards*/
-/* card-large is the whole card, thus the container for the card*/ 
+/* card-large is the whole card, thus the container for the card*/
 .card-large {
     width: 320px;
     height: 540px;
     border-radius: 4px;
     box-shadow: 0 0 0 0.7px $darkest;
     text-align: center;
-    justify-content: center;     
+    justify-content: center;
     margin-top: 40px;
     margin-bottom: 10px;
     transition:0.3s;
@@ -74,52 +74,46 @@ padding: 1px;
     top:1px;
 }
 
+// Product cards
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
 
 /* thinking about to also implement responsiveness of cards, for example on hovering*/
 
 /* This is the section for small cards */
 /* .card-small this is the container for small cards*/
-.card-small {
-    width: 320px;
-    height: 140px;
-    background-color: $dark;
-    border-radius: 4px;
-    margin-top: 10px;
-}
-
-/* .card-small .image this is the container for the image in the small card */
-.card-small .image {
-   height: 140px;
-   width: 140px; 
-}
-/*.card-small .content this is where the content of small cards belong */
-.card-small .content {
-    height: 140px;
-    width: 180px;
-    position: absolute;
-    left: 43.75%;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: space-between;
-    color: $light-gray;
-}
-
-.card-small .price {
-    position:absolute;
-    bottom: 15px;
-    right: 15px;
-}
-
-.card-small .description {
-    position: absolute;
-    bottom: 15px; 
-    width: 130px;
-    overflow:auto;
-}
-
-
-
 /*Have not done the positioning for text fields yet*/
 
 
@@ -137,6 +131,6 @@ opacity: 1;
 a {
     text-decoration: none;
     &:hover {
-        text-decoration: none;  
+        text-decoration: none;
     }
 }

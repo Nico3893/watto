@@ -1,0 +1,72 @@
+<div class="container" id="dash">
+  <div class="row">
+    <div class="col-4 item-container">
+      <h2>My Items</h2>
+      <% if @items.nil? %>
+        Please upload items
+      <% else %>
+        <% @items.each do |item| %>
+          <div class="card-product">
+            <img src= <% item.photo %>>
+            <div class="card-product-infos">
+              <h2><%= item.name %></h2>
+              <div class="d-flex justify-content-between">
+                <p><%= item.category %></p>
+                <p><%= item.price %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-7 bookings-container offset-1">
+      <div class="row justify-content-center">
+        <h2>Bookings</h2>
+      </div>
+      <div class="row justify-content-around">
+        <% if @bookings.nil? %>
+          Please make a booking...
+        <% else %>
+          <div class="my-offers">
+            <h2>My Offers</h2>
+            <% if @bookings_as_owner.nil? %>
+              <p>Unfortunately, no one has booked with you yet...</p>
+            <% else %>
+              <% @bookings_as_owner.each do |book| %>
+                <div class="card-product">
+                  <img src= <% book.photo %>>
+                  <div class="card-product-infos">
+                    <h2><%= book.item.name %></h2>
+                    <div class="d-flex justify-content-between">
+                      <p><%= book.start_date %></p>
+                      <p><%= book.end_date %></p>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="my-rents">
+            <h2>My Offers</h2>
+            <% if @own_bookings.nil? %>
+              <p>Book something please</p>
+            <% else %>
+              <% @own_bookings.each do |book| %>
+                <div class="card-product">
+                  <img src= <% book.photo %>>
+                  <div class="card-product-infos">
+                    <h2><%= book.item.name %></h2>
+                    <div class="d-flex justify-content-between">
+                      <p><%= book.start_date %></p>
+                      <p><%= book.end_date %></p>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
