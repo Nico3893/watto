@@ -4,9 +4,16 @@
   <% end %>
   <div id="navbar-flex">
     <div>
-      <form action="/items">
+     <!--  <form action="/items">
         <input type="search" name="search" class="search navbar-search nav-item-search" placeholder="Search your item">
-      </form>
+      </form> -->
+      <%= form_tag items_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "search navbar-search nav-item-search",
+          placeholder: "Search your item"
+        %>
+      <% end %>
     </div>
     <div>
       <ul class="navbar-nav">
