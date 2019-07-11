@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.item_id = params[:id]
-    @booking.status = "pending"
+    @booking.status = "open"
     authorize @booking
     @booking.user = current_user
     if @booking.save
