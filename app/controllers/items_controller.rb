@@ -2,7 +2,12 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = policy_scope(Item)
+    if params[:query].present?
+      @items = policy_scope(Item)
+      @items = Item.search_global(params[:query])
+    else
+      @items = policy_scope(Item)
+    end
   end
 
   def show
@@ -44,4 +49,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :price, :details, :category)
   end
 
+  def query_param
+    params.require(:query)
+  end
 end

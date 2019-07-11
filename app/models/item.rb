@@ -7,4 +7,12 @@ class Item < ApplicationRecord
   validates :price, presence: true
   validates :name, presence: true
   validates :category, presence: true
+
+  include PgSearch
+  pg_search_scope :search_global,
+    against: [ :details, :name, :category ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
 end
