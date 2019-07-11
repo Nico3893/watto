@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
+    authorize @booking
   end
 
   def show
@@ -15,9 +16,11 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.item_id = params[:id]
+    @booking.status = "pending"
     authorize @booking
     @booking.user = current_user
     if @booking.save
+      @booking.save
       redirect_to root_path
     else
       render :new
