@@ -25,6 +25,7 @@
 
 .card-large h3 {
     color: $darkest;
+    flex-grow: 1;
 }
 
 .card-large a {
@@ -41,7 +42,9 @@
 
 .card-large .price {
     position: absolute;
-    bottom: 5px;
+    bottom:0%;
+    left: 0%;
+    right:0%;
 }
 
 /* .card-large .image is the image at the top of the card, we implement the image root in the html */
@@ -55,6 +58,10 @@ object-fit: cover;
 padding: 1px;
 }
 
+.card-large p {
+    flex-grow: 2;
+}
+
 /* .card-large .content is the content of the card, the container for the texts at the bottom*/
 
 /* content placement*/
@@ -62,24 +69,26 @@ padding: 1px;
 .card-large .content {
     border-radius: 0 0 4px 4px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 3px;
+    padding: 0px;
     margin: 3px;
+    flex-basis: auto;
 }
 
-.content .item{
+/*.content .item{
     position:relative;
     left: 1px;
     top:1px;
-}
+}*/
 
 // Product cards
 
 .card-product {
   overflow: hidden;
   height: 120px;
-  margin-top:4px;
+  margin: 4px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;

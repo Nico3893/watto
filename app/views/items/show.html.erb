@@ -44,8 +44,8 @@
       </div>
     <div class="form-booking col-4 pt-3 mt-2">
       <%= simple_form_for :booking, method: :post do |t| %>
-        <%= t.input :start_date, as: :string, input_html: {class: "datepicker"} %>
-        <%= t.input :end_date, as: :string, input_html: {class: "datepicker"} %>
+        <%= t.input :start_date, as: :string, input_html: { id: "range_start"} %>
+        <%= t.input :end_date, as: :string, input_html: { id: "range_end"} %>
         <%= t.submit "Book", class: "button-dark"%>
       <% end %>
     </div>
