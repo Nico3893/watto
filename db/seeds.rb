@@ -29,7 +29,7 @@ def create_vehicle(item)
   crew = item['crew']
   passengers = item['passengers']
   details = "model: #{model}, manufacturer: #{manufacturer}, crew: #{crew}, passengers: #{passengers}"
-  price = item['cost_in_credits'].to_i / 1000
+  price = item['cost_in_credits'].to_i / 1000 == 0 ? 10 : item['cost_in_credits'].to_i / 1000
   category = "vehicle"
   result = {name: name, details: details, price: price, category: category}
   p result
@@ -43,7 +43,7 @@ def create_starship(item)
   crew = item['crew']
   passengers = item['passengers']
   details = "model: #{model}, manufacturer: #{manufacturer}, crew: #{crew}, passengers: #{passengers}"
-  price = item['cost_in_credits'].to_i / 1000
+  price = item['cost_in_credits'].to_i / 1000 == 0 ? 10 : item['cost_in_credits'].to_i / 1000
   category = "starship"
   result = {name: name, details: details, price: price, category: category}
   return result
@@ -80,6 +80,7 @@ def users
   end
 end
 
+Booking.destroy_all
 Item.destroy_all
 User.destroy_all
 users
