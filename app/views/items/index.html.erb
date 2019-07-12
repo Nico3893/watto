@@ -3,6 +3,11 @@
 <% end %>
 
 <div class="container">
+  <% if params[:query].present? %>
+    <h3><%= pluralize @items.size, "result" %> for your search</h3>
+  <% else %>
+    <h3>All available items</h3>
+  <% end %>
     <div class="row">
         <% @items.each do |item|%>
             <%= link_to item_path(item) do %>
@@ -21,7 +26,7 @@
                             <h3 class="item"><%=item.name%></h3>
                             <% details =  item.details.split(",") %>
                             <%if details.count == 4 %>
-                                <p class="details"><%= details[0].upcase %> 
+                                <p class="details"><%= details[0].upcase %>
                                 <%= details[1].upcase %></p>
                                 <p class="details"><%= details[2].upcase + details[3].upcase%></p>
                             <% else %>
