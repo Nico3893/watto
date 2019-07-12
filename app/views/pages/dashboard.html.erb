@@ -28,13 +28,15 @@
         <h2>My Bookings</h2>
       </div>
       <div class="row bookings-container justify-content-around">
-        <% if @bookings_as_owner.nil? && @own_bookings.nil? %>
+        <% if @bookings_as_owner.empty? && @own_bookings.empty? %>
           Please make a booking...
         <% else %>
+
           <div class="my-offers col-6">
             <h2>Requests</h2>
             <% if @bookings_as_owner.nil? %>
               <p>Unfortunately, no one has booked with you yet...</p>
+
             <% else %>
               <% @bookings_as_owner.each do |book| %>
                 <div class="card-product">
@@ -60,7 +62,7 @@
           </div>
           <div class="my-rents col-6">
             <h2>I booked</h2>
-            <% if @own_bookings.nil? %>
+            <% if @own_bookings.empty? %>
               <p>Book something please</p>
             <% else %>
               <% @own_bookings.each do |book| %>

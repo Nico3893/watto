@@ -1,8 +1,13 @@
 .container {
   margin-top: 91px;
+  min-height: 83vh;
 }
 
-.container .create-item{
+.row {
+  justify-content:center;
+}
+
+.container.create-item{
   margin-top: 91px;
   min-height: 83vh;
 }

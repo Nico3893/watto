@@ -18,23 +18,31 @@
     <div>
       <ul class="navbar-nav">
         <%= link_to new_item_path, class: "nav-link" do %>
-        <li class="nav-item">
-          Offer
-        </li>
-        <% end%>
+          <li class="nav-item">
+            Offer
+          </li>
+          <% end%>
         <%= link_to items_path, class: "nav-link" do %>
-        <li class="nav-item">
-          Items
-        </li>
+          <li class="nav-item">
+            Items
+          </li>
         <% end%>
-       <%= link_to dashboard_path, class: "nav-link" do %>
-        <li class="nav-item">
-          Dashboard
-        </li>
+        <%= link_to dashboard_path, class: "nav-link" do %>
+          <li class="nav-item">
+            Dashboard
+          </li>
         <% end%>
-        <li class="ml-5 mt-2">
-          <%= image_tag "http://sharpball.co/wp-content/uploads/2019/01/darth-vader-printable-mask-image-0-darth-vader-mask-coloring-sheet.jpg", class: "avatar" %>
-        </li>
+        <% if user_signed_in? %>
+          <li class="ml-5 mt-2">
+            <%= cl_image_tag current_user.photo, class: "avatar" %>
+          </li>
+        <% else %>
+          <%= link_to dashboard_path, class: "nav-link" do %>
+            <li class="nav-item">
+              Login
+            </li>
+          <% end%>
+        <% end %>
       </ul>
     </div>
   </div>

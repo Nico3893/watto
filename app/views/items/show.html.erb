@@ -3,15 +3,27 @@
 <% end %>
 
 
-<div class="container">
+<div class="container create-item">
 
       <div class="banner-show" style='background-image: url(<%=@item.photo%>)'=>
       </div>
+      <div class="row" style="display:flex;flex-direction:row;justify-content:space-between">
+      <h2>
+       Rent <%= @item.name %> For<%if @item.price == 0%>
+          <h2 style="text-shadow: 0px 4px 3px rgba(255, 233, 25,0.4),
+             0px 8px 13px rgba(255, 233, 25,0.1),
+             0px 18px 23px rgba(255, 233, 25,0.1)"><%="10 C/DAY" %></h3>
+        <%else%>
+          <h2 style="text-shadow: 0px 4px 3px rgba(255, 233, 25,0.4),
+             0px 8px 13px rgba(255, 233, 25,0.1),
+             0px 18px 23px rgba(255, 233, 25,0.1)"><%="#{@item.price} C/DAY" %></h3>
+        <%end%>
+      </h2>
+
+      </div>
   <div class="row justify-content-between">
     <div class="detail-container col-4">
-      <h2>
-        <%= @item.name %>
-      </h2>
+
         <% details =  @item.details.split(",") %>
         <% details.each do |detail| %>
           <p>
@@ -25,21 +37,14 @@
         <%= @item.location %>
       </p>
       <%end%>
-      <h3>Category</h3>
+      <h3 style="font-size: 20px">Category</h3>
       <p>
         <%= @item.category.capitalize %>
       </p>
     </div>
-    <div>
-      <div class="avatar-large" style="position:relative;top:10px">
-        <%= image_tag "http://sharpball.co/wp-content/uploads/2019/01/darth-vader-printable-mask-image-0-darth-vader-mask-coloring-sheet.jpg", alt: "alttext", class: "avatar-large"%>
-      </div>
-      <div class="align-self-end">
-        <%if @item.price == 0%>
-          <h3 style="position:relative;bottom:-180px"><%= "10 C/DAY" %></h3>
-        <%else%>
-          <h3 style="position:relative;bottom:-180px"><%= "#{@item.price} C/DAY" %></h3>
-        <%end%>
+    <div style="display:flex;flex-direction:column;align-items:center;padding-top:3px">
+       <div style="display:flex;align-self:flex-end">
+
       </div>
     </div>
     <% if user_signed_in? %>
@@ -53,7 +58,7 @@
     <% else %>
       <div class="col-4 pt-3 mt-2">
         <div class="alert alert-info" id="showpage-alert">
-          Please log-in to <br>
+          Please <%= link_to "login", new_user_session_path %> to <br>
           book this item
         </div>
       </div>
