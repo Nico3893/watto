@@ -7,7 +7,7 @@
       <% else %>
         <% @items.each do |item| %>
           <div class="card-product">
-            <img src= <% item.photo %>>
+            <%= cl_image_tag item.photo %>
             <div class="card-product-infos">
               <h2><%= item.name %></h2>
               <div class="d-flex justify-content-between">
@@ -34,7 +34,7 @@
             <% else %>
               <% @bookings_as_owner.each do |book| %>
                 <div class="card-product">
-                  <img src= <% book.item.photo %>>
+                  <%= cl_image_tag book.item.photo %>
                   <div class="card-product-infos">
                     <h2><%= book.item.name %></h2>
                     <div class="d-flex justify-content-between">
@@ -47,13 +47,13 @@
             <% end %>
           </div>
           <div class="my-rents">
-            <h2>My Offers</h2>
+            <h2>I booked</h2>
             <% if @own_bookings.nil? %>
               <p>Book something please</p>
             <% else %>
               <% @own_bookings.each do |book| %>
                 <div class="card-product">
-                  <img src= <% book.item.photo %>>
+                  <%= cl_image_tag book.item.photo %>
                   <div class="card-product-infos">
                     <h2><%= book.item.name %></h2>
                     <div class="d-flex justify-content-between">
