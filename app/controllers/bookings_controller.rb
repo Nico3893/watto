@@ -30,6 +30,9 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @booking.update(update_params)
+    authorize @booking
+    redirect_to dashboard_path
   end
 
   def delete
@@ -42,6 +45,10 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :status)
+  end
+
+  def update_params
+    params.permit( :status)
   end
 end

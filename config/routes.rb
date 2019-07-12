@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   end
   post 'items/:id', to: 'bookings#create'
   get 'dashboard', to: 'pages#dashboard'
+  resources :bookings, only: [ :update ]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

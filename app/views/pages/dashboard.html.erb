@@ -11,11 +11,11 @@
           <% @items.each do |item| %>
             <div class="card-product">
               <%= cl_image_tag item.photo %>
-              <div class="card-product-infos">
+              <div class="card-product-infos flex-grow">
                 <h2><%= item.name %></h2>
                 <div class="d-flex justify-content-between">
-                  <p><%= item.category %></p>
-                  <p><%= item.price %></p>
+                  <p><%= item.category.upcase %></p>
+                  <p><%= item.price %> C/ day</p>
                 </div>
               </div>
             </div>
@@ -31,10 +31,12 @@
         <% if @bookings_as_owner.empty? && @own_bookings.empty? %>
           Please make a booking...
         <% else %>
-          <div class="my-offers">
-            <h2>My Offers</h2>
-            <% if @bookings_as_owner.empty? %>
-              <p>You don't have any bookings yet...</p>
+
+          <div class="my-offers col-6">
+            <h2>Requests</h2>
+            <% if @bookings_as_owner.nil? %>
+              <p>Unfortunately, no one has booked with you yet...</p>
+
             <% else %>
               <% @bookings_as_owner.each do |book| %>
                 <div class="card-product">
@@ -45,12 +47,20 @@
                       <p><%= book.start_date %></p>
                       <p><%= book.end_date %></p>
                     </div>
+                    <% if book.status == "open" %>
+                      <div class ="d-flex justify-content-between">
+                        <%= link_to "Accept", booking_path(book, status: "approved"), method: :patch, class: "button-dark"  %>
+                        <%= link_to "Decline", booking_path(book, status: "cancelled"), method: :patch, class: "button-light"  %>
+                      </div>
+                    <% else %>
+                      <p> STATUS: <%= book.status.upcase %></p>
+                    <% end %>
                   </div>
                 </div>
               <% end %>
             <% end %>
           </div>
-          <div class="my-rents">
+          <div class="my-rents col-6">
             <h2>I booked</h2>
             <% if @own_bookings.empty? %>
               <p>Book something please</p>
