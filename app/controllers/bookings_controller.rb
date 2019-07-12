@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.user = current_user
     if @booking.save
-      redirect_to dashboard_path
+      redirect_to dashboard_path, notice: "Your booking request was sent!"
     else
       render :new
     end

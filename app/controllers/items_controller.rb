@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
     authorize @item
     @item.user = current_user
     if @item.save
-      redirect_to item_path(@item)
+      redirect_to item_path(@item), notice: "Success! Your item is now online"
     else
       render :new
     end
