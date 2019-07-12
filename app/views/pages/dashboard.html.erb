@@ -44,13 +44,13 @@
                   <div class="card-product-infos">
                     <h2><%= book.item.name %></h2>
                     <div class="d-flex justify-content-between">
-                      <p><%= book.start_date %></p>
-                      <p><%= book.end_date %></p>
+                      <p><%= book.start_date.strftime("%B %d, %Y") %></p>
+                      <p><%= book.end_date.strftime("%B %d, %Y") %></p>
                     </div>
                     <% if book.status == "open" %>
                       <div class ="d-flex justify-content-between">
-                        <%= link_to "Accept", booking_path(book, status: "approved"), method: :patch, class: "button-dark"  %>
-                        <%= link_to "Decline", booking_path(book, status: "cancelled"), method: :patch, class: "button-light"  %>
+                        <%= link_to "Accept", booking_path(book, status: "approved"), method: :patch, class: "button-dark-small"  %>
+                        <%= link_to "Decline", booking_path(book, status: "cancelled"), method: :patch, class: "button-light-small"  %>
                       </div>
                     <% else %>
                       <p> STATUS: <%= book.status.upcase %></p>

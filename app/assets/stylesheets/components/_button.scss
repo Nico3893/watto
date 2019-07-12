@@ -8,7 +8,25 @@ font-weight: bold;
 font-family: $body-font;
 }
 
+.button-dark-small {
+background-color: $gray;
+color: $white;
+position: relative;
+padding: 4px 8px;
+border-radius: 4px;
+font-weight: bold;
+font-family: $body-font;
+}
+
 .button-dark:hover {
+text-decoration: none;
+color: $yellow;
+}
+button:focus {
+  outline:0;
+}
+
+.button-dark-small:hover {
 text-decoration: none;
 color: $yellow;
 }
@@ -28,7 +46,26 @@ transition: 0.4s;
 opacity: 0.7;
 }
 
+.button-light-small {
+background-color: $light-gray;
+color: $black;
+position: relative;
+padding: 4px 8px;
+border-radius: 2px;
+font-weight: bold;
+font-family: $body-font;
+transition: 0.4s;
+opacity: 0.7;
+}
+
 .button-light:hover {
+text-decoration: none;
+color: $yellow;
+background-color: $dark;
+opacity: 0.9;
+}
+
+.button-light-small:hover {
 text-decoration: none;
 color: $yellow;
 background-color: $dark;
