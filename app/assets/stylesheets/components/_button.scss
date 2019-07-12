@@ -20,15 +20,17 @@ button:focus {
 background-color: $light-gray;
 color: $black;
 position: relative;
-padding: 5px 15px;
-border-radius: 8px;
+padding: 8px 15px;
+border-radius: 4px;
 font-weight: bold;
 font-family: $body-font;
 transition: 0.4s;
+opacity: 0.7;
 }
 
 .button-light:hover {
 text-decoration: none;
 color: $yellow;
 background-color: $dark;
+opacity: 0.9;
 }
