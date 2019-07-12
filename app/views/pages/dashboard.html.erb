@@ -71,8 +71,8 @@
                   <div class="card-product-infos">
                     <h2><%= book.item.name %></h2>
                     <div class="d-flex justify-content-between">
-                      <p><%= book.start_date %></p>
-                      <p><%= book.end_date %></p>
+                      <p><%= book.start_date.strftime("%B %d, %Y") %></p>
+                      <p><%= book.end_date.strftime("%B %d, %Y") %></p>
                     </div>
                       <p> STATUS: <%= book.status.upcase %></p>
                   </div>
